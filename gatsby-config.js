@@ -28,8 +28,14 @@ module.exports = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`
-            options: {
+            _options: {
               maxWidth: 1200,
+            },
+            get options() {
+              return this._options;
+            },
+            set options(value) {
+              this._options = value;
             },
           },
         ]
